@@ -12,7 +12,7 @@
 
 *A beautiful, open-source book club platform designed to bring people together through reading.*
 
-[Getting Started](#-quick-start) · [Features](#-features) · [How It Works](#-how-the-picker-works) · [Deploy](#-deploy-to-vercel)
+[Getting Started](#quick-start) | [Features](#features) | [How It Works](#how-the-picker-works) | [Deploy](#deploy-to-vercel)
 
 </div>
 
@@ -25,15 +25,15 @@ We wanted a way to pick books fairly, track what we'd read together, and have me
 <table>
 <tr>
 <td width="33%" align="center">
-<h3>📊 Tufte-Inspired</h3>
+<h3>Tufte-Inspired</h3>
 <p>The data IS the graphic. Our bookshelf shows progress as actual book spines.</p>
 </td>
 <td width="33%" align="center">
-<h3>🏛️ Library Aesthetic</h3>
+<h3>Library Aesthetic</h3>
 <p>Brass, walnut, and cream tones that feel like a cozy reading nook.</p>
 </td>
 <td width="33%" align="center">
-<h3>🎲 Fair Randomization</h3>
+<h3>Fair Randomization</h3>
 <p>Series order is sacred. No spoilers, no confusion.</p>
 </td>
 </tr>
@@ -41,21 +41,21 @@ We wanted a way to pick books fairly, track what we'd read together, and have me
 
 ---
 
-## ✨ Features
+## Features
 
 | Feature | Description |
 |---------|-------------|
-| 🎰 **Smart Book Picking** | Random draws for standalones, enforced order for series |
-| 📚 **Visual Bookshelf** | Watch your shelf fill with book spines as you progress |
-| 🔗 **Series Intelligence** | Pilot book decisions, pause/resume, never spoil order |
-| 💬 **Shared Remarks** | Leave notes and ratings on books you've finished |
-| 🎬 **Spotlight Section** | Feature movies, podcasts, and discussion questions |
-| 🤖 **Discord Integration** | Announce picks automatically to your server |
-| ⚡ **Real-time Sync** | Powered by Supabase, works across all devices |
+| **Smart Book Picking** | Random draws for standalones, enforced order for series |
+| **Visual Bookshelf** | Watch your shelf fill with book spines as you progress |
+| **Series Intelligence** | Pilot book decisions, pause/resume, never spoil order |
+| **Shared Remarks** | Leave notes and ratings on books you've finished |
+| **Spotlight Section** | Feature movies, podcasts, and discussion questions |
+| **Discord Integration** | Announce picks automatically to your server |
+| **Real-time Sync** | Powered by Supabase, works across all devices |
 
 ---
 
-## 🔄 How the Picker Works
+## How the Picker Works
 
 ```mermaid
 flowchart TD
@@ -88,28 +88,28 @@ flowchart TD
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```mermaid
 graph TB
-    subgraph Client["🖥️ Frontend (Next.js)"]
+    subgraph Client["Frontend - Next.js"]
         UI[React Components]
         Hooks[Custom Hooks]
         State[Local State]
     end
 
-    subgraph Backend["⚙️ API Routes"]
+    subgraph Backend["API Routes"]
         API[Next.js API]
         Auth[Auth Middleware]
         Rate[Rate Limiting]
     end
 
-    subgraph Database["🗄️ Supabase"]
+    subgraph Database["Supabase"]
         PG[(PostgreSQL)]
         RT[Realtime]
     end
 
-    subgraph External["🌐 External"]
+    subgraph External["External Services"]
         OL[Open Library API]
         DC[Discord Webhook]
     end
@@ -133,7 +133,7 @@ graph TB
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone & Install
 
@@ -185,13 +185,13 @@ Open [http://localhost:3000](http://localhost:3000)
 
 ---
 
-## ☁️ Deploy to Vercel
+## Deploy to Vercel
 
 ```mermaid
 flowchart LR
     A[Push to GitHub] --> B[Import to Vercel]
     B --> C[Add Environment Variables]
-    C --> D[Deploy!]
+    C --> D[Deploy]
 
     style A fill:#333,stroke:#fff,color:#fff
     style B fill:#000,stroke:#fff,color:#fff
@@ -207,7 +207,7 @@ npx vercel --prod
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
@@ -218,37 +218,37 @@ npx vercel --prod
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 reading-room/
-├── 📂 data/
+├── data/
 │   └── books.json           # Your book list
-├── 📂 src/
-│   ├── 📂 app/              # Next.js pages & API routes
-│   ├── 📂 components/       # React components
-│   └── 📂 lib/              # Core logic, hooks, utilities
-├── 📂 public/               # Static assets
-├── 📂 supabase/             # Database migrations
-└── 📄 .env.example          # Environment template
+├── src/
+│   ├── app/                  # Next.js pages & API routes
+│   ├── components/           # React components
+│   └── lib/                  # Core logic, hooks, utilities
+├── public/                   # Static assets
+├── supabase/                 # Database migrations
+└── .env.example              # Environment template
 ```
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-We welcome contributions! Whether it's:
+We welcome contributions:
 
-- 🐛 Bug fixes
-- ✨ New features
-- 🎨 Design improvements
-- 📝 Documentation
+- Bug fixes
+- New features
+- Design improvements
+- Documentation
 
 Open an issue or submit a PR.
 
 ---
 
-## 📄 License
+## License
 
 MIT - Use it, modify it, share it. Build your own reading community.
 
@@ -258,6 +258,6 @@ MIT - Use it, modify it, share it. Build your own reading community.
 
 **Built with love for readers, by readers.**
 
-[⬆ Back to Top](#the-reading-room)
+[Back to Top](#the-reading-room)
 
 </div>
