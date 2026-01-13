@@ -1,0 +1,344 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Cozy Library with POP - Vibrant Palette */
+  --color-walnut: 18, 14, 12;
+  --color-charcoal: 28, 24, 20;
+  --color-brass: 255, 195, 0;
+  --color-lamp: 255, 180, 50;
+  --color-cream: 255, 250, 240;
+  --color-bronze: 55, 45, 35;
+  --color-library-green: 16, 185, 129;
+  --color-burgundy: 190, 50, 90;
+  --color-electric: 99, 102, 241;
+  --color-cyan: 34, 211, 238;
+}
+
+body {
+  color: rgb(var(--color-cream));
+  background: rgb(var(--color-walnut));
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-walnut));
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgb(var(--color-brass)), rgb(var(--color-lamp)));
+  border-radius: 5px;
+  border: 2px solid rgb(var(--color-walnut));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-brass));
+}
+
+/* ================================
+   LIQUID BLOB BACKGROUNDS
+   ================================ */
+
+/* Animated gradient blob */
+.blob-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: rgb(var(--color-walnut));
+}
+
+.blob-bg::before,
+.blob-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: blob-float 20s ease-in-out infinite;
+}
+
+.blob-bg::before {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(var(--color-brass), 0.6) 0%, transparent 70%);
+  top: -200px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.blob-bg::after {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(var(--color-burgundy), 0.5) 0%, transparent 70%);
+  bottom: -150px;
+  left: -100px;
+  animation-delay: -10s;
+}
+
+@keyframes blob-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 50px) scale(0.95);
+  }
+  75% {
+    transform: translate(-40px, -20px) scale(1.05);
+  }
+}
+
+/* Liquid gradient mesh background */
+.liquid-mesh {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-mesh::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(var(--color-brass), 0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(var(--color-electric), 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 60% 80%, rgba(var(--color-burgundy), 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 70%, rgba(var(--color-library-green), 0.1) 0%, transparent 40%);
+  animation: mesh-shift 30s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mesh-shift {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+}
+
+/* Glowing orb effect */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+  animation: orb-pulse 8s ease-in-out infinite;
+}
+
+.glow-orb-gold {
+  background: rgba(var(--color-brass), 0.4);
+}
+
+.glow-orb-pink {
+  background: rgba(var(--color-burgundy), 0.3);
+}
+
+.glow-orb-green {
+  background: rgba(var(--color-library-green), 0.3);
+}
+
+@keyframes orb-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* ================================
+   GLASSMORPHISM CARDS
+   ================================ */
+
+.glass-card {
+  background: rgba(var(--color-charcoal), 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--color-brass), 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-vibrant {
+  background: rgba(var(--color-charcoal), 0.5);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(var(--color-brass), 0.3);
+  box-shadow:
+    0 0 40px rgba(var(--color-brass), 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ================================
+   GLOW EFFECTS
+   ================================ */
+
+.warm-glow {
+  box-shadow: 0 0 30px rgba(var(--color-lamp), 0.2);
+}
+
+.warm-glow:hover {
+  box-shadow: 0 0 50px rgba(var(--color-lamp), 0.35);
+}
+
+.gold-glow {
+  box-shadow: 0 0 25px rgba(var(--color-brass), 0.3);
+}
+
+.gold-glow:hover {
+  box-shadow: 0 0 40px rgba(var(--color-brass), 0.5);
+  transform: translateY(-2px);
+}
+
+/* Neon text glow */
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(var(--color-brass), 0.5);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 20px rgba(var(--color-library-green), 0.6);
+}
+
+.text-glow-pink {
+  text-shadow: 0 0 20px rgba(var(--color-burgundy), 0.5);
+}
+
+/* ================================
+   ANIMATED GRADIENTS
+   ================================ */
+
+.gradient-animate {
+  background: linear-gradient(
+    -45deg,
+    rgb(var(--color-brass)),
+    rgb(var(--color-lamp)),
+    rgb(var(--color-burgundy)),
+    rgb(var(--color-electric))
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Gradient border effect */
+.gradient-border {
+  position: relative;
+  background: rgb(var(--color-charcoal));
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgb(var(--color-brass)), rgb(var(--color-burgundy)), rgb(var(--color-electric)));
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* ================================
+   BUTTON STYLES
+   ================================ */
+
+.btn-pop {
+  background: linear-gradient(135deg, rgb(var(--color-brass)) 0%, rgb(var(--color-lamp)) 100%);
+  color: rgb(var(--color-walnut));
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(var(--color-brass), 0.3);
+}
+
+.btn-pop:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(var(--color-brass), 0.5);
+}
+
+.btn-pop:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   UTILITIES
+   ================================ */
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Book spine effect */
+.book-spine {
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.4) 0%,
+    transparent 8%,
+    transparent 92%,
+    rgba(0,0,0,0.3) 100%
+  );
+}
+
+/* Lamp light gradient */
+.lamp-light {
+  background: radial-gradient(
+    ellipse at top,
+    rgba(var(--color-lamp), 0.15) 0%,
+    transparent 60%
+  );
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(var(--color-brass), 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Badge rarity colors */
+.badge-common { color: rgb(var(--color-cream)); }
+.badge-uncommon { color: rgb(var(--color-library-green)); }
+.badge-rare { color: rgb(var(--color-electric)); }
+.badge-epic { color: rgb(var(--color-burgundy)); }
+.badge-legendary {
+  color: rgb(var(--color-brass));
+  text-shadow: 0 0 10px rgba(var(--color-brass), 0.5);
+}

@@ -1,0 +1,73 @@
+'use client';
+
+import { Remark } from '@/lib/types';
+
+interface RemarkPanelProps {
+  remarks: Remark[];
+  isLoading: boolean;
+}
+
+function StarRating({ rating }: { rating: number | null }) {
+  if (!rating) return null;
+
+  return (
+    <div className="flex gap-0.5">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <svg
+          key={star}
+          className={`w-4 h-4 ${star <= rating ? 'text-amber-400' : 'text-gray-600'}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
+export function RemarkPanel({ remarks, isLoading }: RemarkPanelProps) {
+  if (isLoading) {
+    return (
+      <div className="space-y-4">
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="animate-pulse bg-white/5 rounded-xl p-4">
+            <div className="h-4 bg-white/10 rounded w-1/4 mb-2" />
+            <div className="h-3 bg-white/10 rounded w-full mb-1" />
+            <div className="h-3 bg-white/10 rounded w-3/4" />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  if (remarks.length === 0) {
+    return (
+      <div className="text-center py-8 text-gray-500">
+        <svg className="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        <p>No remarks yet. Be the first to share your thoughts!</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-4">
+      {remarks.map((remark) => (
+        <div key={remark.id} className="bg-white/5 rounded-xl p-4">
+          <div className="flex items-center justify-between mb-2">
+            <span className="font-medium text-primary">{remark.userName}</span>
+            <div className="flex items-center gap-2">
+              <StarRating rating={remark.rating} />
+              <span className="text-xs text-gray-500">
+                {new Date(remark.createdAt).toLocaleDateString()}
+              </span>
+            </div>
+          </div>
+          {remark.note && <p className="text-gray-300 text-sm">{remark.note}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}

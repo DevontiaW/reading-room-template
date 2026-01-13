@@ -1,0 +1,82 @@
+[
+  {
+    "id": "sample-1",
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genres": ["Classic", "Literary Fiction"],
+    "series": null,
+    "description": "A story of decadence and excess, Gatsby explores the American Dream in the Jazz Age."
+  },
+  {
+    "id": "sample-2",
+    "title": "1984",
+    "author": "George Orwell",
+    "genres": ["Dystopian", "Science Fiction", "Classic"],
+    "series": null,
+    "description": "A dystopian social science fiction novel and cautionary tale about the dangers of totalitarianism."
+  },
+  {
+    "id": "sample-3",
+    "title": "The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Classic"],
+    "series": {
+      "name": "The Lord of the Rings",
+      "order": 1,
+      "total": 3
+    },
+    "description": "The first volume of the epic high-fantasy novel that follows Frodo Baggins and the Fellowship."
+  },
+  {
+    "id": "sample-4",
+    "title": "The Two Towers",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Classic"],
+    "series": {
+      "name": "The Lord of the Rings",
+      "order": 2,
+      "total": 3
+    },
+    "description": "The second volume continues the journey as the Fellowship is broken and new alliances form."
+  },
+  {
+    "id": "sample-5",
+    "title": "The Return of the King",
+    "author": "J.R.R. Tolkien",
+    "genres": ["Fantasy", "Adventure", "Classic"],
+    "series": {
+      "name": "The Lord of the Rings",
+      "order": 3,
+      "total": 3
+    },
+    "description": "The epic conclusion to the trilogy as the fate of Middle-earth hangs in the balance."
+  },
+  {
+    "id": "sample-6",
+    "title": "Dune",
+    "author": "Frank Herbert",
+    "genres": ["Science Fiction", "Adventure"],
+    "series": {
+      "name": "Dune Chronicles",
+      "order": 1,
+      "total": 6
+    },
+    "description": "Set in the distant future, this epic tale of politics, religion, and ecology unfolds on the desert planet Arrakis."
+  },
+  {
+    "id": "sample-7",
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genres": ["Fiction", "Philosophy", "Adventure"],
+    "series": null,
+    "description": "A philosophical novel about a young shepherd's journey to find treasure and discover his Personal Legend."
+  },
+  {
+    "id": "sample-8",
+    "title": "Beloved",
+    "author": "Toni Morrison",
+    "genres": ["Literary Fiction", "Historical Fiction"],
+    "series": null,
+    "description": "A powerful exploration of the lasting trauma of slavery through the story of Sethe and her family."
+  }
+]
